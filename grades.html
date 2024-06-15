@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grades</title>
+</head>
+
+<body>
+  <h1>Анализ оценок студентов</h1>
+  <script>
+    // массив для 12 студентов
+    let grades = [
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+    ]
+
+    //вывод массива
+    console.log(grades);
+    //проверка длины массива
+    // console.log(grades.length);
+
+    // Средний балл
+    let sum = grades.reduce(function (a, b) {
+      return a + b;
+    }, 0);
+    // console.log(sum);
+    console.log(`Средний балл: ${Math.floor(sum / 12)}`);
+    //проверка средний балл студентов
+    let [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelvwe] = grades;
+    let middleGradeCheck = (one + two + three + four + five + six + seven + eight + nine + ten + eleven + twelvwe) / 12
+    // console.log(Math.floor(middleGradeCheck));
+
+    //максимальный балл
+    let max = grades.sort(function (a, b) {
+      return a - b;
+    });
+    reverseMax = max.reverse()[0];
+    console.log(`Максимальный балл: ${reverseMax}`);
+
+    //минимальный балл
+    console.log(`Минимальный балл: ${max.reverse()[0]}`);
+
+    //количество с баллом >= 60
+    let maxGrade = grades.filter(function (grade) {
+      return grade >= 60
+    })
+    // console.log(maxGrade);
+    console.log(`Получили положительную оценку: ${maxGrade.length}`);
+    //количество с баллом < 60
+    let minGrade = grades.filter(function (grade) {
+      return grade < 60
+    })
+    // console.log(minGrade)
+    console.log(`Не получили положительную оценку: ${minGrade.length}`);
+    //проверка количество с баллом < 60
+
+    //Преобразование оценок
+    // A
+    let letterA = grades.filter(function (grade) {
+      return grade >= 80
+    })
+    // console.log(letterA);
+    const letterAresult = letterA.map(function (letterA) {
+      return letterA = 'A';
+    });
+    console.log(letterAresult)
+
+    // B
+    let letterB = grades.filter(function (grade) {
+      return grade >= 60 && grade <= 79
+    })
+    // console.log(letterB);
+    const letterBresult = letterB.map(function (letterB) {
+      return letterB = 'B';
+    });
+    console.log(letterBresult);
+
+    // C
+    let letterC = grades.filter(function (grade) {
+      return grade >= 40 && grade <= 59
+    })
+    // console.log(letterC)
+    const letterCresult = letterC.map(function (letterC) {
+      return letterC = 'C';
+    });
+    console.log(letterCresult);
+
+    // D
+    let letterD = grades.filter(function (grade) {
+      return grade >= 20 && grade <= 39
+    })
+    // console.log(letterD);
+    const letterDresult = letterD.map(function (letterD) {
+      return letterD = 'D';
+    });
+    console.log(letterDresult);
+
+    // E
+    let letterE = grades.filter(function (grade) {
+      return grade <= 20
+    })
+    // console.log(letterE)
+    const letterEresult = letterE.map(function (letterE) {
+      return letterE = 'E';
+    });
+    console.log(letterEresult);
+  </script>
+</body>
+
+</html>
