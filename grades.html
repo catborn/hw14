@@ -39,7 +39,7 @@
     console.log(`Средний балл: ${Math.floor(sum / 12)}`);
     //проверка средний балл студентов
     let [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelvwe] = grades;
-    let middleGradeCheck = (one + two + three + four + five + six + seven + eight + nine + ten + eleven + twelvwe) / 12
+    let middleGradeCheck = (one + two + three + four + five + six + seven + eight + nine + ten + eleven + twelvwe) / grades.length
     // console.log(Math.floor(middleGradeCheck));
 
     //максимальный балл
@@ -58,6 +58,7 @@
     })
     // console.log(maxGrade);
     console.log(`Получили положительную оценку: ${maxGrade.length}`);
+
     //количество с баллом < 60
     let minGrade = grades.filter(function (grade) {
       return grade < 60
