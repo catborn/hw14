@@ -63,18 +63,17 @@
     ];
     // Имена, карьеа, фильмография
     const director = document.getElementById("direct");
-    const links = document.getElementById("link")
+    const links = document.getElementById("link");
 
     directors.forEach(function (item) {
       const newItem = document.createElement('li');
-      const newlinks = document.createElement('a')
+      const newlinks = document.createElement('a');
       newItem.textContent = `${item.name}: ${item.career.toLowerCase()}.`;
       newlinks.href = item.films;
-      newlinks.innerText = "Фильмография"
-      console.log(newlinks)
+      newlinks.innerText = "Фильмография";
       director.append(newItem);
       director.append(newlinks);
-    })
+    });
 
     // Отображаем лучшие фильмы
     const topFilmsList = document.getElementById("best");
@@ -82,7 +81,7 @@
       const allFilms = document.createElement('span');
       allFilms.textContent = item.top_rated_film;
       topFilmsList.append("*" + allFilms.textContent + "*");
-    })
+    });
 
   </script>
 </body>
